@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/app_colors.dart';
+import '../widgets/category_card.dart';
 import '../widgets/circle_icon_button.dart';
 import '../widgets/section_header.dart';
 
@@ -20,12 +21,37 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       appBar: _buildAppBar(),
       body: Column(
+
         children: [
           SizedBox(height: 16.h,),
           HomeCarouselWidgets(),
           SizedBox(height: 1.h,),
           SectionHeader(title: 'Categories', onTap: () {  },),
-          SizedBox(height: 16.h),
+          SingleChildScrollView(
+            scrollDirection: .horizontal,
+            child: SizedBox(
+              height: 68.h,
+              child: Padding(
+                padding: EdgeInsets.only(left: 16.0),
+                child: Row(
+                  children: [
+                    CategoryCard(imagePath:"assets/icons/nike.png", onTap: () {  },),
+                    SizedBox(width: 16.w,),
+                    CategoryCard(imagePath:"assets/icons/puma.png", onTap: () {  },),
+                    SizedBox(width: 16.w,),
+                    CategoryCard(imagePath:"assets/icons/adidas.png", onTap: () {  },),
+                    SizedBox(width: 16.w,),
+                    CategoryCard(imagePath:"assets/icons/jordan.png", onTap: () {  },),
+                    SizedBox(width: 16.w,),
+                    CategoryCard(imagePath:"assets/icons/lining.png", onTap: () {  },),
+                    SizedBox(width: 16.w,),
+                    CategoryCard(imagePath:"assets/icons/jordan.png", onTap: () {  },),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          SectionHeader(title: 'Recommendation', onTap: () {  },),
 
         ],
       ),
@@ -57,6 +83,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
 
 
 
