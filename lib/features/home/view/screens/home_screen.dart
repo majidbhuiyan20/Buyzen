@@ -1,8 +1,10 @@
+import 'package:buyzen/features/home/view/widgets/home_carousel_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/app_colors.dart';
 import '../widgets/circle_icon_button.dart';
+import '../widgets/section_header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,6 +19,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _buildAppBar(),
+      body: Column(
+        children: [
+          SizedBox(height: 16.h,),
+          HomeCarouselWidgets(),
+          SizedBox(height: 1.h,),
+          SectionHeader(title: 'Categories', onTap: () {  },),
+          SizedBox(height: 16.h),
+
+        ],
+      ),
     );
   }
 
@@ -45,5 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
 
 
