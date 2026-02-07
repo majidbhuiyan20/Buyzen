@@ -1,3 +1,4 @@
+import 'package:buyzen/app/app_colors.dart';
 import 'package:buyzen/app/routes.dart';
 import 'package:buyzen/core/constants/app_icons.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _moveToNextScreen() async{
     await Future.delayed(Duration(seconds: 1));
-
+        Navigator.pushReplacementNamed(context, Routes.bottomNavBarRoute);
        }
 
 
@@ -33,9 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: .center,
           children: [
             Spacer(),
-            Image.asset(AppIcons.splashLogo, height: 180.h, width: 180.w,),
+            Text("BuyZen", style: TextStyle(fontSize: 48, fontWeight: .w800, color: AppColors.themeColor),),
             Spacer(),
-            CircularProgressIndicator(color: Colors.green,),
+            CircularProgressIndicator(color: AppColors.themeColor,),
             SizedBox(height: 20,),
           ],
         ),

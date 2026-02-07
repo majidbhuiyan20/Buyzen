@@ -1,6 +1,6 @@
-import 'package:buyzen/common/main_nav/view/main_nav_holder_screen.dart';
 import 'package:buyzen/core/constants/app_strings.dart';
 import 'package:flutter/material.dart';
+import '../common/main_nav/view/main_nav_holder_screen.dart';
 import '../common/splash/view/splash_screen.dart';
 
 
@@ -16,7 +16,7 @@ class RouteGenerator{
     switch (routeSettings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_)=> SplashScreen());
-      case Routes.mainNavRoute:
+      case Routes.bottomNavBarRoute:
         return MaterialPageRoute(builder: (_)=> MainNavHolderScreen());
       default:
         return unDefineRoute();
