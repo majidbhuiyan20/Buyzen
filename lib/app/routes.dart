@@ -1,4 +1,5 @@
 import 'package:buyzen/core/constants/app_strings.dart';
+import 'package:buyzen/features/details/view/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import '../common/main_nav/view/main_nav_holder_screen.dart';
 import '../common/splash/view/splash_screen.dart';
@@ -9,6 +10,7 @@ class Routes{
   static const String bottomNavBarRoute="/bottomNavbarRoute";
   static const String loginRoute="/loginScreen";
   static const String mainNavRoute="/mainNavScreen";
+  static const String productDetailsRoute="/productDetailsRoute";
 
 }
 class RouteGenerator{
@@ -18,6 +20,8 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_)=> SplashScreen());
       case Routes.bottomNavBarRoute:
         return MaterialPageRoute(builder: (_)=> MainNavHolderScreen());
+      case Routes.productDetailsRoute:
+        return MaterialPageRoute(builder: (_)=> ProductDetailsScreen());
       default:
         return unDefineRoute();
     }
