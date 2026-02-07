@@ -1,6 +1,5 @@
 import 'package:buyzen/app/routes.dart';
 import 'package:buyzen/core/constants/app_icons.dart';
-import 'package:buyzen/test/category_api_call.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,10 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _moveToNextScreen() async{
-    await Future.delayed(Duration(seconds: 3));
-      // Navigator.pushReplacementNamed(context, Routes.mainNavRoute);
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>CategoriesPage()));
-   }
+    await Future.delayed(Duration(seconds: 1));
+
+       }
 
 
   @override
