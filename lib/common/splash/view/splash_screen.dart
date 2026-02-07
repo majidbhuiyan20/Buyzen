@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _moveToNextScreen() async{
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 3));
         Navigator.pushReplacementNamed(context, Routes.bottomNavBarRoute);
        }
 
@@ -34,7 +34,16 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: .center,
           children: [
             Spacer(),
-            Text("BuyZen", style: TextStyle(fontSize: 48, fontWeight: .w800, color: AppColors.themeColor),),
+            Center(
+              child: Row(
+                mainAxisAlignment: .center,
+                children: [
+                  Icon(Icons.shop_2, size: 48.sp, color: AppColors.themeColor, ),
+                  SizedBox(width: 8.w,),
+                  Text("BuyZen", style: TextStyle(fontSize: 48, fontWeight: .w800, color: AppColors.themeColor),),
+                ],
+              ),
+            ),
             Spacer(),
             CircularProgressIndicator(color: AppColors.themeColor,),
             SizedBox(height: 20,),

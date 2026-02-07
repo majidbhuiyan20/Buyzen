@@ -36,7 +36,7 @@ class ProductCardWidgets extends StatelessWidget {
           ),
         ),
         Container(
-          width: 150.w,
+          width: 165.w,
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
             color: Colors.white,

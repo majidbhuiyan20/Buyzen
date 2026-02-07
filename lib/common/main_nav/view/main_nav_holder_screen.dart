@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../features/categories/view/screens/category_screens.dart';
+
 class NavItem {
   final IconData icon;
   final String label;
@@ -25,9 +27,9 @@ class _MainNavHolderScreenState extends ConsumerState<MainNavHolderScreen> {
 
   final List<NavItem> items = [
     NavItem(icon: Icons.home, label: "Home"),
-    NavItem(icon: Icons.dashboard_customize, label: "Dashboard"),
-    NavItem(icon: Icons.favorite_outline, label: "Favorites"),
-    NavItem(icon: Icons.person_outline, label: "Profile"),
+    NavItem(icon: Icons.dashboard_customize, label: "Categories"),
+    NavItem(icon: Icons.shopping_cart, label: "Carts"),
+    NavItem(icon: Icons.favorite_outline, label: "Wishlist"),
   ];
 
   @override
@@ -35,7 +37,7 @@ class _MainNavHolderScreenState extends ConsumerState<MainNavHolderScreen> {
     final currentIndex = ref.watch(mainNavProvider);
     final screens = [
       HomeScreen(),
-      HomeScreen(),
+      CategoryScreens(),
       HomeScreen(),
       HomeScreen(),
     ];
