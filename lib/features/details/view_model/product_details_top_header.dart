@@ -48,8 +48,6 @@ class ProductDetailsTopHeader extends StatelessWidget {
                     },
                   ),
                 ),
-
-                // 2️⃣ Small Moving Indicator
                 Positioned(
                   bottom: 8,
                   left: 0,

@@ -1,20 +1,25 @@
+import 'package:buyzen/common/main_nav/view_model/main_nav_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CategoryScreens extends StatefulWidget {
+class CategoryScreens extends ConsumerStatefulWidget {
   const CategoryScreens({super.key});
 
   @override
-  State<CategoryScreens> createState() => _CategoryScreensState();
+  ConsumerState<CategoryScreens> createState() => _CategoryScreensState();
 }
 
-class _CategoryScreensState extends State<CategoryScreens> {
+class _CategoryScreensState extends ConsumerState<CategoryScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Categories"),
+        leading: IconButton(onPressed: (){
+          ref.read(mainNavProvider.notifier).backToHome();
+        }, icon: Icon(Icons.arrow_back_ios_new)),
+        title:  Text("Categories"),
       ),
       body: Padding(
         padding: EdgeInsets.all(8.w),

@@ -1,6 +1,9 @@
 import 'package:buyzen/app/app_text_style.dart';
+import 'package:buyzen/common/main_nav/view_model/main_nav_controller.dart';
 import 'package:buyzen/features/home/view/widgets/home_carousel_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../app/app_colors.dart';
@@ -9,14 +12,14 @@ import '../widgets/circle_icon_button.dart';
 import '../widgets/product_card_widgets.dart';
 import '../widgets/section_header.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 16.h,),
             HomeCarouselWidgets(),
             SizedBox(height: 1.h,),
-            SectionHeader(title: 'Categories', onTap: () {  },),
+            SectionHeader(title: 'Categories', onTap: () {
+               ref.read(mainNavProvider.notifier).changeToCategory();
+            },),
             SingleChildScrollView(
               scrollDirection: .horizontal,
               child: SizedBox(

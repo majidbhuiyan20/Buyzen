@@ -7,6 +7,12 @@ class MainNavController extends Notifier<int> {
   void changeItem(int index) {
     state = index;
   }
+  void changeToCategory() {
+    state = 1;
+  }
+  void backToHome() {
+    state = 0;
+  }
 }
 
 final mainNavProvider =
