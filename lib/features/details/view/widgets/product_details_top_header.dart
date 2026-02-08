@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../app/app_colors.dart';
+import '../../../../app/app_colors.dart';
 class ProductDetailsTopHeader extends StatelessWidget {
   const ProductDetailsTopHeader({
     super.key,
@@ -76,45 +76,48 @@ class ProductDetailsTopHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        Center(
-          child: SizedBox(
-            height: 55,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemCount: images.length,
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    _pageController.animateToPage(
-                      index,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    width: 55,
-                    height: 55,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: _currentIndex == index
-                            ? AppColors.themeColor
-                            : Colors.grey.shade200,
-                        width: 1,
+        Padding(
+          padding: const EdgeInsets.only(left: 12),
+          child: Center(
+            child: SizedBox(
+              height: 55,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: images.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      _pageController.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                      width: 55,
+                      height: 55,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: _currentIndex == index
+                              ? AppColors.themeColor
+                              : Colors.grey.shade200,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Center(
-                      child: Image.asset(
-                        images[index],
-                        width: 35,
-                        fit: BoxFit.contain,
+                      child: Center(
+                        child: Image.asset(
+                          images[index],
+                          width: 35,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
         ),
