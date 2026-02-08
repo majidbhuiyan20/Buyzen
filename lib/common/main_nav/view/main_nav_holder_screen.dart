@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:buyzen/app/app_colors.dart';
+import 'package:buyzen/features/carts/view/screens/carts_screen.dart';
 import 'package:buyzen/features/home/view/screens/home_screen.dart';
 import 'package:buyzen/common/main_nav/view_model/main_nav_controller.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class _MainNavHolderScreenState extends ConsumerState<MainNavHolderScreen> {
     final screens = [
       HomeScreen(),
       CategoryScreens(),
-      HomeScreen(),
+      CartsScreen(),
       HomeScreen(),
     ];
 
