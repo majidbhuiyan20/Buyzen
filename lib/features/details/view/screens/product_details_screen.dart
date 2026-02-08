@@ -1,10 +1,12 @@
 import 'package:buyzen/app/app_colors.dart';
 import 'package:buyzen/features/details/view_model/product_selection_index.dart';
+import 'package:buyzen/features/home/view/widgets/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../view_model/product_details_top_header.dart';
+import '../widgets/name_and_price_widget.dart';
+import '../widgets/product_details_top_header.dart';
 class ProductDetailsScreen extends ConsumerStatefulWidget {
   const ProductDetailsScreen({super.key});
 
@@ -31,6 +33,7 @@ class _ProductDetailsScreenState extends ConsumerState<ProductDetailsScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: const Text(
           "Details",
           style: TextStyle(fontWeight: FontWeight.w500),
@@ -47,12 +50,51 @@ class _ProductDetailsScreenState extends ConsumerState<ProductDetailsScreen> {
       body: Column(
         crossAxisAlignment: .center,
         children: [
-          ProductDetailsTopHeader(pageController: _pageController, images: images, ref: ref, currentIndex: _currentIndex)
+          SizedBox(height: 16.h,),
+          ProductDetailsTopHeader(pageController: _pageController, images: images, ref: ref, currentIndex: _currentIndex),
+          SizedBox(height: 16.h,),
+          NameAndPriceWidget(),
+          SizedBox(height: 4.h,),
+          SectionHeader(title: "Sellect Size", onTap: (){}),
+          SizedBox(height: 4.h,),
+          Row(
+            children: [
+              GestureDetector(
+                onTap: (){
+
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8.r),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withAlpha(40),
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Text("38", style: TextStyle(fontWeight: .w600, fontSize: 18),),
+                ),
+              ),
+              SizedBox(width: 12,),
+              GestureDetector(
+                onTap: (){
+
+                },
+                child: Container(
+                  padding: EdgeInsets.all(8.r),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withAlpha(40),
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: Text("40", style: TextStyle(fontWeight: .w600, fontSize: 18),),
+                ),
+              ),
+            ],
+          )
 
         ],
       ),
     );
   }
 }
+
+
 
 
